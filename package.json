@@ -1,0 +1,28 @@
+{
+  "name": "lovelace",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:qcarpentier/lovelace.git",
+  "author": "Quentin <quentin.carpentier@outlook.be>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon build/index.js",
+    "watch": "tsc -p tsconfig.json -w",
+    "codequality": "eslint src/**"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.31",
+    "@types/ws": "^7.2.3",
+    "discord.js": "^12.0.2",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-config": "^0.3.0"
+  }
+}

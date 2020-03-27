@@ -1,6 +1,7 @@
 import * as Discord from 'discord.js';
 import { EventManager } from './Core/EventManager';
 import { Events } from './Events';
+import { ConfigManager } from './Core/ConfigManager';
 
 export class Bot {
     private static instance: Bot;
@@ -14,6 +15,7 @@ export class Bot {
         manager.defineOn('ready', event.onReady).defineOn('message', event.onMessage);
 
         this.client.login(process.env.TOKEN);
+        ConfigManager.getInstance(this.client).loadConfig();
     }
 
     public static getInstance(): Bot {

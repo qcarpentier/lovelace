@@ -1,6 +1,8 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
-dotenv.config({path: path.resolve(__dirname, '../.env')});
+import { Bot } from './Bot';
 
-console.log('Hello from entry point!');
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
+
+const bot = Bot.getInstance();

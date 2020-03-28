@@ -15,7 +15,7 @@ export class Bot {
         manager.defineOn('ready', event.onReady).defineOn('message', event.onMessage);
 
         this.client.login(process.env.TOKEN);
-        ConfigManager.getInstance(this.client).loadConfig();
+        ConfigManager.getInstance();
     }
 
     public static getInstance(): Bot {

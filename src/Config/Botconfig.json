@@ -2,5 +2,9 @@
   "roles": {
     "administrator": [],
     "moderator": []
+  },
+  "logger": {
+    "saveInFile": false,
+    "saveFilename": ""
   }
 }

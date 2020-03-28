@@ -1,22 +1,26 @@
-import * as Discord from 'discord.js';
 import configData from '../Config/Botconfig.json';
+import { LoggerOptionInterface } from './LoggerManager';
 
 export class ConfigManager {
     private static instance: ConfigManager;
-    private client: Discord.Client;
 
     private moderatorRole: Array<string>;
     private administratorRole: Array<string>;
+    private logger: LoggerOptionInterface;
 
-    private constructor(client: Discord.Client) {
-        this.client = client;
+    private constructor() {
+        this.loadConfig();
     }
 
-    public static getInstance(client: Discord.Client): ConfigManager {
+    public static getInstance(): ConfigManager {
         if (!this.instance) {
-            this.instance = new ConfigManager(client);
+            this.instance = new ConfigManager();
         }
         return this.instance;
+    }
+
+    public getLoggerConfig(): LoggerOptionInterface {
+        return this.logger;
     }
 
     /**
@@ -25,6 +29,7 @@ export class ConfigManager {
     public loadConfig(): void {
         this.moderatorRole = configData.roles.moderator;
         this.administratorRole = configData.roles.administrator;
+        this.logger = configData.logger;
     }
 
     public saveConfig(): void {

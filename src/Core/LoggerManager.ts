@@ -4,10 +4,10 @@ import { ConsoleTransportInstance } from 'winston/lib/winston/transports';
 import winstonDailyRotateFile from 'winston-daily-rotate-file';
 import path from 'path';
 
-export interface LoggerOptionInterface {
+export type LoggerOptionInterface = {
     saveInFile: boolean;
     saveFilename: string;
-}
+};
 
 class LoggerManager {
     private static instance: LoggerManager;

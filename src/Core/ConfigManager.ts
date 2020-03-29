@@ -7,6 +7,7 @@ export class ConfigManager {
     private moderatorRole: Array<string>;
     private administratorRole: Array<string>;
     private logger: LoggerOptionInterface;
+    // Todo : Rework this, each elements of configuration shouldn't be properties. Use get method in object instead
 
     private constructor() {
         this.loadConfig();

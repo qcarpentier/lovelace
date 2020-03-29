@@ -1,12 +1,13 @@
 import * as Discord from 'discord.js';
+import { Logger } from './Core/LoggerManager';
 
 export class Events {
     public onReady = (): void => {
-        console.log('Bot is started');
+        Logger.info('The bot is now connected and ready!');
     };
 
     public onMessage = (message: Discord.Message): void => {
-        console.log(
+        Logger.info(
             `New message from ${message.author.username} with a lenght of ${message.content.length} characters`,
         );
     };

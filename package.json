@@ -8,7 +8,7 @@
   "scripts": {
     "start": "nodemon build/index.js",
     "watch": "tsc -p tsconfig.json -w",
-    "codequality": "eslint src/**"
+    "codequality": "eslint --ext .ts src/"
   },
   "dependencies": {
     "@types/node": "^12.12.31",
@@ -17,7 +17,9 @@
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.2",
     "reflect-metadata": "^0.1.13",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.25.0",

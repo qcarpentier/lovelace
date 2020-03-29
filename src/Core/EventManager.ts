@@ -22,7 +22,7 @@ export class EventManager {
      * @param handler - This is the function which will be call when even is trigger
      */
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    public defineOn(event: string, handler: any): EventManager {
+    public defineOn(event: any, handler: any): EventManager {
         // Todo : Change type of handler
         this.client.on(event, handler);
         return EventManager.getInstance(this.client);

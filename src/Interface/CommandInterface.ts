@@ -7,6 +7,5 @@ export interface CommandInterface {
     isEnabled?: boolean;
     typeEffect?: boolean;
     commandInterval?: number;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     execute(userCommand: CommandContext): Promise<void>;
 }

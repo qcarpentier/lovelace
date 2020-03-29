@@ -1,10 +1,12 @@
-interface CommandInterface {
-    name: string;
-    description: string;
-    permissions: Array<string>;
-    isEnabled: boolean;
-    typeEffect: boolean;
-    commandInterval: number;
+import { CommandContext } from '../Core/CommandContext';
+
+export interface CommandInterface {
+    names: string[];
+    description?: string;
+    permissions?: Array<string>;
+    isEnabled?: boolean;
+    typeEffect?: boolean;
+    commandInterval?: number;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    execute(...args: any[]): any;
+    execute(userCommand: CommandContext): Promise<void>;
 }

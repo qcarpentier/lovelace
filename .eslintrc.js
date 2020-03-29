@@ -18,6 +18,8 @@ module.exports = {
         node: true,
     },
     rules: {
-        semi: "error"
+        semi: "error", 
+        "require-await": "off",
+        "@typescript-eslint/require-await": "off"
     }
 };

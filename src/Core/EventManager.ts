@@ -21,7 +21,7 @@ export class EventManager {
      * @param {string} event - The Discord event which will be trigger the event
      * @param handler - This is the function which will be call when even is trigger
      */
-    public defineOn(event: string, handler: any): EventManager {
+    public defineOn(event: any, handler: any): EventManager {
         // Todo : Change type of handler
         this.client.on(event, handler);
         return EventManager.getInstance(this.client);

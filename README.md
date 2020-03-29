@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 First, you should install [**Git**](https://git-scm.com/download/win) and [**Node.js**](https://nodejs.org/). 
-You will use **NPM**. It's distributed with **Node** - which means that when you download **Node.js**, you automatically get **NPM** installed on your computer.
+We use [**Yarn**](https://classic.yarnpkg.com/en/docs/install/#windows-stable) as a dependency manager, you need to install it in order to be able to install the project dependencies. You can also use [**Laragon**](https://laragon.org/) to install Node, Yarn and add them directly to the path. 
 
 ### Installation
 1. Create a [**personal fork**](https://guides.github.com/activities/forking/) of the project on Github.
@@ -23,15 +23,15 @@ You will use **NPM**. It's distributed with **Node** - which means that when you
     ```
     git clone <fork_project>
     ```
-3. Then, you should install all the dependencies with the wonderful help of **NPM**:
+3. Then, you should install all the dependencies with the wonderful help of **Yarn**:
     ```
-    npm install
+    yarn install
     ```
 4. Your remote repo on Github is called `origin`. Add the **original repository** (this one) as a remote called `upstream`:
     ```
     git remote add upstream https://github.com/qcarpentier/arsg-bot
     ```
-5. Add a new branch to work on! Don't work directly on the `master` branch:
+5. Add a new branch to work on! Don't work directly on the `master / development` branch:
     ```
     git checkout -b <new_feature>
     ```
@@ -40,6 +40,9 @@ You will use **NPM**. It's distributed with **Node** - which means that when you
 - When implementing or fix a feature, **comment your code.**
 - Follow the code style of the project, **including indentation.**
 - Add or change the **documentation** as needed. (for example, the `!help` command)
+- Before commit, run the command ``yarn run codequality`` and make sure there's no errors.
+- You must create branch by feature, **your commits should only contain changes for your feature, they should not change any other files**.
+- You must respect [**the naming convention**](https://www.grafikart.fr/tutoriels/nommage-commit-1009) of commits.
 
 ### Submitting A Pull Request
 
@@ -66,6 +69,7 @@ You will use **NPM**. It's distributed with **Node** - which means that when you
 6. Once the pull request is approved and merged, you can pull the changes from `upstream` to your local repo and delete your extra branch(es).
 
 ## 📚 Built With
+* [Typescript](https://www.typescriptlang.org/) - TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
 * [node.js](https://github.com/nodejs/node) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 * [discord.js](https://github.com/discordjs/discord.js/) - A powerful JavaScript library for interacting with the Discord API.
 * [dotenv](https://github.com/motdotla/dotenv) - Loads environment variables from `.env` for Node.js projects.

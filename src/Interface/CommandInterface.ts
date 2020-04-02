@@ -7,5 +7,6 @@ export interface CommandInterface {
     isEnabled?: boolean;
     typeEffect?: boolean;
     commandInterval?: number;
+
     execute(userCommand: CommandContext): Promise<void>;
 }

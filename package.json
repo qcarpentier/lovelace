@@ -4,11 +4,20 @@
   "main": "src/index.js",
   "repository": "git@github.com:qcarpentier/lovelace.git",
   "author": "Quentin <quentin.carpentier@outlook.be>",
+  "contributors": [
+    {
+      "name": "Misha",
+      "email": "mishapro@mm.st",
+      "url": "https://github.com/ASmallCookie/"
+    }
+  ],
   "license": "MIT",
   "scripts": {
     "start": "nodemon build/index.js",
     "watch": "tsc -p tsconfig.json -w",
-    "codequality": "eslint --ext .ts src/"
+    "lint": "eslint --ext .ts src/",
+    "pretest": "rm -rf build && tsc -p tsconfig.json",
+    "test": "mocha --exit build/Test/*.js"
   },
   "dependencies": {
     "@types/node": "^12.12.31",
@@ -33,5 +42,8 @@
     "eslint-plugin-prettier": "^3.1.2",
     "mocha": "^7.1.1",
     "prettier": "^2.0.2"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }

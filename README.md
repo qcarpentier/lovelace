@@ -4,6 +4,8 @@ Lovelace is _(not yet)_ the **best Discord bot to bootstrap your Discord server.
 I challenged myself to build a complete Discord bot from scratch. The development will be _sometimes_ on [**my Twitch channel**](https://www.twitch.tv/imloosha). **Feel free to join the adventure!** Any support or contribution will be appreciated. 🤩
 
 ## 🎁 Contributing
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/qcarpentier/lovelace/issues)
+
 As I use this on [**my own Discord server**](https://discord.gg/sWjqFm3), I built several features that I really wanted to have. If you have any suggestions, just
 [**open an issue**](https://github.com/qcarpentier/lovelace/issues/new) and tell me what you think.  
 If you'd like to contribute, please fork the repository and make changes as
@@ -40,7 +42,7 @@ We use [**Yarn**](https://classic.yarnpkg.com/en/docs/install/#windows-stable) a
 - When implementing or fix a feature, **comment your code.**
 - Follow the code style of the project, **including indentation.**
 - Add or change the **documentation** as needed. (for example, the `!help` command)
-- Before commit, run the command ``yarn run codequality`` and make sure there's no errors.
+- Before commit, run the command ``yarn run lint && yarn run test`` and make sure there's no errors.
 - You must create branch by feature, **your commits should only contain changes for your feature, they should not change any other files**.
 - You must respect [**the naming convention**](https://www.grafikart.fr/tutoriels/nommage-commit-1009) of commits.
 

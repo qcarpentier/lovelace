@@ -9,9 +9,9 @@ export class CommandHandler {
     private readonly prefix: string;
 
     private constructor(prefix: string) {
+        // Todo : Class should be load dynamically from Commands folder (maybe with namespace ?)
         const commandClasses = [Ping];
         this.commands = commandClasses.map((commandClass) => new commandClass());
-
         this.prefix = prefix;
     }
 
@@ -25,21 +25,19 @@ export class CommandHandler {
     async handleMessage(message: Message): Promise<void> {
         if (!this.isCommand(message)) return undefined;
 
-        const commandContext = new CommandContext(message, this.prefix);
-        // console.log(`Command Context: ${message} et ${commandContext.command}`);
+        const commandContext: CommandContext = new CommandContext(message, this.prefix);
+        const foundCommand: CommandInterface | undefined = this.commands.find((command) =>
+            command.names.includes(commandContext.command),
+        );
 
-        const foundCommand = this.commands.find((command) => command.names.includes(commandContext.command));
-
-        if (!foundCommand) {
-            await message.reply(
-                `La commande n'a pas été trouvée. Essayez ${this.prefix}help pour voir les commandes possibles!`,
-            );
-        } else {
-            await foundCommand.execute(commandContext);
-        }
+        foundCommand
+            ? await foundCommand.execute(commandContext)
+            : await message.reply(
+                  `La commande n'a pas été trouvée. Essayez ${this.prefix}help pour voir les commandes possibles!`,
+              );
     }
 
     private isCommand(message: Message): boolean {
-        return message.content.startsWith(this.prefix) && !message.author.bot && message.channel.type !== 'dm';
+        return message.content.startsWith(this.prefix) && !message.author.bot;
     }
 }

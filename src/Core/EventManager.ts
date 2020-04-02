@@ -1,8 +1,8 @@
 import * as Discord from 'discord.js';
+import { ClientEvents } from 'discord.js';
 
 export class EventManager {
     private static instance: EventManager;
-    private events: Array<object>;
     private readonly client: Discord.Client;
 
     private constructor(client: Discord.Client) {
@@ -18,13 +18,11 @@ export class EventManager {
 
     /**
      * Allows you to define a Discord event
-     * @param {string} event - The Discord event which will be trigger the event
-     * @param handler - This is the function which will be call when even is trigger
+     * @param event - The Discord event which will be trigger the event
+     * @param listener - This is the function which will be call when even is trigger
      */
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    public defineOn(event: any, handler: any): EventManager {
-        // Todo : Change type of handler
-        this.client.on(event, handler);
+    public define<K extends keyof ClientEvents>(event: K, listener: (...args: ClientEvents[K]) => void): EventManager {
+        this.client.on(event, listener);
         return EventManager.getInstance(this.client);
     }
 }

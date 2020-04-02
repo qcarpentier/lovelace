@@ -18,6 +18,10 @@ export class ConfigManager {
         return this.instance;
     }
 
+    static getConfig(): typeof configFileData {
+        return ConfigManager.getInstance().configData;
+    }
+
     public getLoggerConfig(): LoggerOptionInterface {
         return this.loggerData;
     }
@@ -27,7 +31,10 @@ export class ConfigManager {
      */
     public loadConfig(): void {
         this.configData = configFileData;
+        this.loggerData = this.configData.logger;
     }
 
-    public get(): any {}
+    /*public get(key?: typeof configFileData | string): object | typeof configFileData {
+        return;
+    }*/
 }

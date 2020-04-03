@@ -1,13 +1,11 @@
-import configData from '../Config/Botconfig.json';
+import configFileData from '../Config/Botconfig.json';
 import { LoggerOptionInterface } from './LoggerManager';
 
 export class ConfigManager {
     private static instance: ConfigManager;
 
-    private moderatorRole: Array<string>;
-    private administratorRole: Array<string>;
-    private logger: LoggerOptionInterface;
-    // Todo : Rework this, each elements of configuration shouldn't be properties. Use get method in object instead
+    private loggerData: LoggerOptionInterface;
+    private configData: typeof configFileData;
 
     private constructor() {
         this.loadConfig();
@@ -20,21 +18,23 @@ export class ConfigManager {
         return this.instance;
     }
 
+    static getConfig(): typeof configFileData {
+        return ConfigManager.getInstance().configData;
+    }
+
     public getLoggerConfig(): LoggerOptionInterface {
-        return this.logger;
+        return this.loggerData;
     }
 
     /**
      * This function will load config from Botconfig.json
      */
     public loadConfig(): void {
-        this.moderatorRole = configData.roles.moderator;
-        this.administratorRole = configData.roles.administrator;
-        this.logger = configData.logger;
+        this.configData = configFileData;
+        this.loggerData = this.configData.logger;
     }
 
-    public saveConfig(): void {
-        configData.roles.moderator = this.moderatorRole;
-        configData.roles.administrator = this.administratorRole;
-    }
+    /*public get(key?: typeof configFileData | string): object | typeof configFileData {
+        return;
+    }*/
 }

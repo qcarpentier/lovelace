@@ -6,5 +6,8 @@
   "logger": {
     "saveInFile": false,
     "saveFilename": ""
+  },
+  "main": {
+    "prefix": "!"
   }
 }

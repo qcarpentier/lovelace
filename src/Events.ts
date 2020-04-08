@@ -1,8 +1,8 @@
 import * as Discord from 'discord.js';
-import { Logger } from './Core/LoggerManager';
-import { CommandHandler } from './Core/CommandHandler';
+import { Logger } from './Core/Manager/LoggerManager';
+import { CommandHandler } from './Core/Manager/CommandHandler';
 import { Bot } from './Bot';
-import { ConfigManager } from './Core/ConfigManager';
+import { ConfigManager } from './Core/Manager/ConfigManager';
 
 export class Events {
     public onReady = (): void => {

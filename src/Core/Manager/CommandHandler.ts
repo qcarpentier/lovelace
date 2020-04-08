@@ -1,8 +1,8 @@
 import { Message } from 'discord.js';
-import { CommandInterface } from '../Interface/CommandInterface';
+import { CommandInterface } from '../../Interface/CommandInterface';
 import { CommandContext } from './CommandContext';
-import { Ping } from '../Commands/Ping';
-import { Uptime } from '../Commands/Uptime';
+import { Ping } from '../../Commands/Ping';
+import { Uptime } from '../../Commands/Uptime';
 
 export class CommandHandler {
     private static instance: CommandHandler;

@@ -1,4 +1,4 @@
-import configFileData from '../Config/Botconfig.json';
+import configFileData from '../../Config/Botconfig.json';
 import { LoggerOptionInterface } from './LoggerManager';
 
 export class ConfigManager {

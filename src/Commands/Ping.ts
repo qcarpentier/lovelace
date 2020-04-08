@@ -1,5 +1,5 @@
 import { CommandInterface } from '../Interface/CommandInterface';
-import { CommandContext } from '../Core/CommandContext';
+import { CommandContext } from '../Core/Manager/CommandContext';
 
 export class Ping implements CommandInterface {
     names = ['ping'];

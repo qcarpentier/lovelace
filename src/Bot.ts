@@ -1,8 +1,8 @@
 import { Client } from 'discord.js';
-import { EventManager } from './Core/EventManager';
+import { EventManager } from './Core/Manager/EventManager';
 import { Events } from './Events';
-import { ConfigManager } from './Core/ConfigManager';
-import { Logger } from './Core/LoggerManager';
+import { ConfigManager } from './Core/Manager/ConfigManager';
+import { Logger } from './Core/Manager/LoggerManager';
 
 export class Bot {
     private static instance: Bot;

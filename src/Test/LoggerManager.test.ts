@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Logger } from '../Core/LoggerManager';
+import { Logger } from '../Core/Manager/LoggerManager';
 
 describe('Check if LoggerManager work properly', () => {
     it('should return Logger object', () => {

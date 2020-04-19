@@ -21,11 +21,14 @@
   },
   "dependencies": {
     "@types/node": "^12.12.31",
+    "@types/pg": "^7.14.3",
     "@types/ws": "^7.2.3",
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.2",
+    "pg": "^8.0.0",
     "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.24",
     "typescript": "^3.8.3",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.2"
@@ -44,6 +47,6 @@
     "prettier": "^2.0.2"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.0.0"
   }
 }

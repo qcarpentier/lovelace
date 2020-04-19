@@ -1,4 +1,4 @@
-import { CommandContext } from '../Core/CommandContext';
+import { CommandContext } from '../Core/Manager/CommandContext';
 
 export interface CommandInterface {
     names: string[];
